@@ -19,15 +19,8 @@ This project uses the UCI Heart Disease dataset to build and deploy a machine le
 
 ```
 heart-disease-prediction/
-├── data_preprocessing.py          # Data cleaning and preprocessing scripts
-├── model_training.py             # Model training and evaluation
-├── notebooks/                    # Jupyter notebooks for each step
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_feature_selection.ipynb
-│   ├── 04_model_training.ipynb
-│   └── 05_model_evaluation.ipynb
-├── app.py                        # Streamlit web application
+├── heart-disease-model          # Jupyter notebooks for each step
+├── app.py                       # Streamlit web application
 ├── model_pipeline.pkl           # Trained model pipeline
 ├── requirements.txt             # Python dependencies
 ├── .gitignore                   # Git ignore file
@@ -48,20 +41,7 @@ git clone https://github.com/yourusername/heart-disease-prediction.git
 cd heart-disease-prediction
 ```
 
-### 2. Create Virtual Environment
-
-```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -75,40 +55,8 @@ streamlit run app.py
 
 The application will be available at `http://localhost:8501`
 
-## 🚀 Deployment with Ngrok
-
-### 1. Install Ngrok
-
-Download and install Ngrok from [ngrok.com](https://ngrok.com/)
-
-### 2. Create Ngrok Account
-
-1. Sign up for a free Ngrok account
-2. Get your authtoken from the dashboard
-3. Configure Ngrok with your authtoken:
-
-```bash
-ngrok config add-authtoken YOUR_AUTHTOKEN
-```
-
-### 3. Deploy the Application
-
-1. Start your Streamlit app:
-```bash
-streamlit run app.py
-```
-
-2. In a new terminal, expose your app using Ngrok:
-```bash
-ngrok http 8501
-```
-
-3. Ngrok will provide a public URL (e.g., `https://abc123.ngrok.io`) that you can share with others.
-
-### 4. Access Your Deployed App
-
-- Use the public URL provided by Ngrok to access your application from anywhere
-- The URL will remain active as long as your Ngrok session is running
+## Deployment with Ngrok
+ Ngrok provide a public URL "https://d4177aeda661.ngrok-free.app" that you can explore the app.
 
 ## 📊 Dataset
 
@@ -143,56 +91,7 @@ The Random Forest classifier achieved the best performance with:
 - **Recall**: ~85%
 - **F1-Score**: ~84%
 
-## 🎯 Usage
-
-1. **Web Interface**: 
-   - Enter patient health data in the input fields
-   - Click "Predict Heart Disease" for instant results
-   - View data visualizations and trends
-
-2. **API Usage**:
-   ```python
-   import joblib
-   import pandas as pd
-   
-   # Load trained model
-   pipeline = joblib.load('model_pipeline.pkl')
-   
-   # Prepare input data
-   input_data = pd.DataFrame([{
-       'age': 50,
-       'trestbps': 120,
-       'chol': 200,
-       'thalach': 150,
-       'oldpeak': 1.5
-   }])
-   
-   # Make prediction
-   prediction = pipeline.predict(input_data)
-   ```
-
-## 🔧 Development
-
-### Adding New Features
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes
-4. Commit changes: `git commit -m 'Add new feature'`
-5. Push to branch: `git push origin feature-name`
-6. Submit a pull request
-
-### Running Tests
-
-```bash
-# Run model training script
-python model_training.py
-
-# Run data preprocessing
-python data_preprocessing.py
-```
-
-## 📝 Contributing
+## Contributing
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -200,28 +99,7 @@ python data_preprocessing.py
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## Authors
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Basmala Hesham** -
 
-## 👥 Authors
-
-- **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
-
-## 🙏 Acknowledgments
-
-- UCI Machine Learning Repository for the dataset
-- Streamlit team for the amazing web framework
-- Scikit-learn contributors for the ML library
-- Ngrok for easy deployment solution
-
-## 📞 Support
-
-If you have any questions or need help, please:
-1. Check the [Issues](https://github.com/yourusername/heart-disease-prediction/issues) page
-2. Create a new issue if your problem isn't already addressed
-3. Contact the maintainers
-
----
-
-⭐ **Star this repository if you found it helpful!**
